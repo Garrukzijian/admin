@@ -16,6 +16,7 @@ function App() {
     const [email,setEmail] = useState('');
     const [detail,setDetail] = useState('');
     const [donateNumber,setDonateNumber] = useState('');
+    const [moneyhave,setMoneyhave] = useState('');
 
     const numberCheckMessageChange = ( e ) => {
         setNumberCheck( e.target.value );
@@ -49,6 +50,7 @@ function App() {
                 setLastname(nftT[1]);
                 setDetail(nftT[2]);
                 setEmail(nftT[3]);
+                setMoneyhave(nftT[5].toNumber());
                 console.log(nftT);
             }else{
                 console.log("Ethereum object does not exist!")
@@ -127,10 +129,14 @@ function App() {
                             <Statistic.Value>{donateNumber}</Statistic.Value>
                             <Statistic.Label>founder</Statistic.Label>
                         </Statistic>
+                        <Statistic color='blue'>
+                            <Statistic.Value>{moneyhave}</Statistic.Value>
+                            <Statistic.Label>money already get</Statistic.Label>
+                        </Statistic>
                         <Form>
                             <Button animated='fade' onClick={transportMoney}>
-                                <Button.Content visible>Click to Fund</Button.Content>
-                                <Button.Content hidden>1 eth to save life</Button.Content>
+                                <Button.Content visible>Click to transport money</Button.Content>
+                                <Button.Content hidden>earn the profit</Button.Content>
                             </Button>
                         </Form>
                     </Card>
